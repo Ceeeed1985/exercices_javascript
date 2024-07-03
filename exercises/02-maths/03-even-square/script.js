@@ -10,19 +10,38 @@
 // You will have time to focus on it later.
 
 (() => {
-    document.getElementById("run").addEventListener("click", () => {
+    
+let suite = [];
+let nombresPairs = [];
+let carreNombresPair = [];
+let nombreAuCarre;
 
-        let nombres = Array.from({ length: 21 }, (_, i) => i + 1);
-        let nombresPairs = nombres.filter(nombre => nombre % 2 === 0);
-    
-        let carresString = ""; // Initialiser une chaîne pour stocker les carrés
-    
-    nombresPairs.forEach(nombre => {
-        let nombreCarre = nombre * nombre;
-        carresString += nombreCarre + "\n"; // Ajouter le carré à la chaîne avec un saut de ligne
-    });
-    
-    alert(carresString); // Afficher tous les carrés dans une seule alerte
+for (i=1;i<22;i++){
+    suite.push(i);
+}
 
-    });
+for (i=0;i<suite.length;i++){
+    if(suite[i] % 2 == 0){
+        nombresPairs.push(suite[i]);
+    }
+};
+
+for (i=0;i<nombresPairs.length;i++){
+    nombreAuCarre = nombresPairs[i] * nombresPairs[i];
+    carreNombresPair.push(nombreAuCarre);
+}
+
+
+console.log(suite);
+console.log(nombresPairs);
+console.log(carreNombresPair);
+
+
+    let run = document.getElementById("run");
+
+    run.addEventListener("click", () => {
+        alert(carreNombresPair);
+
+    })
+
 })();

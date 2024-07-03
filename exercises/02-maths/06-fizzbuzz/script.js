@@ -11,17 +11,15 @@
 
 (()=> {
 
-    for(let i = 1;i <= 100; i++) {
-
-        if((i % 5 === 0) && (i % 3 === 0)){
-            console.log (i+" flizz buzz");
-        } else if (i % 3 === 0) {
-            console.log (i + " flizz");
-        } else if (i % 5 === 0){
-            console.log (i + " buzz");
-        } else {
-            console.log (i);
-        }
+for (let nombre = 1;nombre <=100;nombre++){
+    if ((nombre % 3 == 0) &&(nombre % 5 == 0)){
+        console.log(nombre + " - Fizz Buzz")
+    }else if (nombre % 3 == 0){
+    console.log(nombre + " - Fizz");
+    } else if (nombre % 5 == 0) {
+        console.log(nombre + " - Buzz");
+    } else {
+        console.log(nombre);
     }
-
+}
 })();

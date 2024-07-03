@@ -11,14 +11,29 @@
 
 (() => {
     // to get the value of an input: document.getElementById("element-id").value
- 
-    let nombres = document.getElementById("numbers").value;
-    let tableauNombres = nombres.split (",");
-    let nombresFloat = tableauNombres.map(number => parseFloat(number));
-    let nombresClasses = nombresFloat.sort((a, b) => a - b);
-    document.getElementById("run").addEventListener("click", () => {
-    
-        alert(nombresClasses);
- 
-    });
+
+//récupérer la valeur présente dans la page html
+let nombreAClasser = document.getElementById("numbers").value;
+
+//la valeur arrive sous forme d'une chaine de caractère
+
+let nombres = nombreAClasser.split(',');
+
+for(i=0;i<nombres.length;i++){
+    let nombre = parseFloat(nombres[i]);
+    console.log(nombre);
+}
+
+nombres.sort(function(a,b){return a-b});
+console.log(nombres);
+
+let run = document.getElementById("run");
+run.addEventListener("click", () => {
+    alert("Voici les nombres dans le bon ordre : "+ nombres)
+})
+
+
+
+
+
 })();

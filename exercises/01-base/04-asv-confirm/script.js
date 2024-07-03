@@ -10,24 +10,28 @@
 // You will have time to focus on it later.
 
 (() => {
-    let valid = false;
+ 
+let prenom;
+let age;
+let ville;
 
-    while (!valid){
-    var prenom = prompt('Bonjour, comment t\' appelles-tu ?');
-    var age = prompt('Enchanté '+ prenom + ' ! Quel âge as-tu?');
-    var sexe = prompt(age + ' ans ! T\'es plus vieux que moi. Et tu es un garçon ou une fille ?(un garçon/une fille)');
-    var ville = prompt('Et où habites-tu ?');
-    
-    
-    valid = confirm('Donc tu t\'appelles '
-        + prenom
-        +' , tu as '
-        + age
-        + ' ans, tu es '
-        + sexe
-        + ' , et tu vis à '
-        + ville
-        + '. C\'est exact?'
-    );
+alert('Bonjour, je vais te poser quelques questions, tu es prêt ?')
+
+function poserQuestion(){
+    prenom = prompt("Comment t'appelles-tu ?");
+    age = prompt("Quel âge as-tu ?");
+    ville = prompt("Et où habitez-vous?");
+    };
+
+poserQuestion();
+
+var confirm = prompt("Si j'ai bien compris, tu t'appelles "+ prenom+ ", tu as "+ age + " ans et tu vis à "+ ville + ". C'est correct ?");
+
+if ((confirm === "oui") || (confirm === "Oui")){
+    alert("merci d'avoir répondu");
+    }else{
+    alert("On va recommencer alors !")
+    poserQuestion();
 }
+
 })();

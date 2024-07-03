@@ -10,35 +10,43 @@
 // You will have time to focus on it later.
 
 (() => {
-    document.getElementById("op-one").value;
-    document.getElementById("op-two").value;
-    // to get the value of an input: document.getElementById("element-id").value
+    
+    let operateur1;
+    let operateur2;
 
-    document.getElementById("addition").addEventListener("click", () => {
-        let nombre1 = parseFloat(document.getElementById("op-one").value);
-        let nombre2 = parseFloat(document.getElementById("op-two").value);
-        let somme = nombre1 + nombre2;
-        document.getElementById("result").textContent = "La somme est "+ somme;
-    });
+    let addition = document.getElementById("addition");
+    let soustraction = document.getElementById("substraction");
+    let multiplication = document.getElementById("multiplication");
+    let division = document.getElementById("division");
 
-    document.getElementById("substraction").addEventListener("click", () => {
-        let nombre1 = parseFloat(document.getElementById("op-one").value);
-        let nombre2 = parseFloat(document.getElementById("op-two").value);
-        let difference = nombre1 - nombre2;
-        document.getElementById("result").textContent = "La différence est "+ difference;
-    });
+    addition.addEventListener('click', () => {
+        operateur1 = parseFloat(document.getElementById("op-one").value);
+        operateur2 = parseFloat(document.getElementById("op-two").value);
+        let somme = operateur1 + operateur2;
+        alert('Le résultat est de ' + somme);
+        
+    })
+    soustraction.addEventListener('click', () => {
+        operateur1 = parseFloat(document.getElementById("op-one").value);
+        operateur2 = parseFloat(document.getElementById("op-two").value);
+        let difference = operateur1 - operateur2;
+        alert('Le résultat est de ' + difference);
+        
+    })
+    multiplication.addEventListener('click', () => {
+        operateur1 = parseFloat(document.getElementById("op-one").value);
+        operateur2 = parseFloat(document.getElementById("op-two").value);
+        let produit = operateur1 * operateur2;
+        alert('Le résultat est de ' + produit);
+        
+    })
+    division.addEventListener('click', () => {
+        operateur1 = parseFloat(document.getElementById("op-one").value);
+        operateur2 = parseFloat(document.getElementById("op-two").value);
+        let quotient = operateur1 / operateur2;
+        alert('Le résultat est de ' + quotient);
+        
+    })
 
-    document.getElementById("multiplication").addEventListener("click", () => {
-        let nombre1 = parseFloat(document.getElementById("op-one").value);
-        let nombre2 = parseFloat(document.getElementById("op-two").value);
-        let produit = nombre1 * nombre2;
-        document.getElementById("result").textContent = "Le produit est "+ produit;
-    });
 
-    document.getElementById("division").addEventListener("click", () => {
-        let nombre1 = parseFloat(document.getElementById("op-one").value);
-        let nombre2 = parseFloat(document.getElementById("op-two").value);
-        let quotient = nombre1 / nombre2;
-        document.getElementById("result").textContent = "Le quotient est "+ quotient;
-    });
 })();

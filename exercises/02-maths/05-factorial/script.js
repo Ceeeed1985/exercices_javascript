@@ -12,24 +12,29 @@
 (() => {
     // to get the value of an input: document.getElementById("element-id").value
    
-    document.getElementById("run").addEventListener("click", () => {
-        let nombre = document.getElementById("number").value;
-       
-        function factorial(n) {
-            if (n < 0) {
-                return undefined; // La factorielle n'est pas définie pour les nombres négatifs
-            }
-            let result = 1;
-            for (let i = 1; i <= n; i++) {
-                result *= i;
-            }
-            return result;
-        }
-        
-        alert(factorial(nombre));
-    
+let run = document.getElementById("run");
 
 
+function calculerFactorielle(nombre){
+    let factorielle = 1;
+    if ((nombre === 1) || (nombre === 0)){
+        return 1;
+    }
+        for (let i=2;i<=nombre;i++){
+            factorielle *= i;
+    }
+    return factorielle;
+}
 
-        });
+console.log(calculerFactorielle(0));
+
+run.addEventListener("click", () => {
+    let number = document.getElementById("number").value;
+    console.log(number);
+    number = parseFloat(number);
+    alert(calculerFactorielle(number));
+
+   
+})
+
 })();

@@ -10,13 +10,12 @@
 // You will have time to focus on it later.
 
 (() => {
-    var prenom = prompt("Quel est ton prénom?");
-    var choix = prompt("Voulez-vous du gateau ?(oui/non)");
 
-    if (choix == "oui"){
-        alert ('Bravo ' + prenom + '! Excellent choix')
-    }
-    else {
-        alert ('M\'enfin '+ prenom + '! Du gâteau, ça ne se refuse pas !')
-    }
+var choix = prompt('Est-ce que tu veux du gateau ?\n\n - o : oui\n - n : non');
+if (choix === "o"){
+    alert('Bravo');
+} else {
+    alert("Pfffffff t'es nul !");
+};
+
 })();

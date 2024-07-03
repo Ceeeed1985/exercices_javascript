@@ -12,35 +12,59 @@
 (() => {
     // to get the value of an input: document.getElementById("element-id").value
 
-    const performOperation = operation => {
-        let nombre1= parseFloat(document.getElementById("op-one").value);
-        let nombre2= parseFloat(document.getElementById("op-two").value);
-        // perform the operation
-        switch(operation){
-            case "addition":
-                let somme = nombre1 + nombre2;
-                alert("Le résultat attendu est "+ somme);
-                break;
-            case "substraction":
-                let difference = nombre1 - nombre2;
-                alert("Le résultat attendu est "+ difference);
-                break;
-            case "multiplication":
-                let produit = nombre1 * nombre2;
-                alert("Le résultat attendu est "+ produit);
-                break;
-            case "division":
-                let quotient = nombre1 / nombre2;
-                alert("Le résultat attendu est "+ quotient);
-                break;
-            }
-            
-    };
+    let operande1;
+    let operande2;
 
-    Array.from(document.querySelectorAll("button.operator")).forEach($btn =>
-        $btn.addEventListener(
-            "click",
-            () => (performOperation($btn.id), false),
-        ),
-    );
+    const operateurAdd = document.getElementById("addition");
+    const operateurSub = document.getElementById("substraction");
+    const operateurMultiply = document.getElementById("multiplication");
+    const operateurDivide = document.getElementById("division");
+
+    function add (number1, number2){
+        return number1 + number2;
+    }
+    function sub (number1, number2){
+        return number1 - number2;
+    }
+    function multiply (number1, number2){
+        return number1 * number2;
+    }
+    function divide (number1, number2){
+        return number1 / number2;
+    }
+    function calculate (operator){
+        operande1 = parseFloat(document.getElementById("op-one").value);
+        operande2 = parseFloat(document.getElementById("op-two").value);
+
+        let result;
+        switch(operator) {
+            case "+":
+                result = add(operande1,operande2);
+                console.log(result);
+                break;
+            case "-":
+                result = sub(operande1,operande2);
+                console.log(result);
+                break;
+            case "*":
+                result = multiply(operande1, operande2);
+                console.log(result);
+                break;
+            case "/":
+                result = divide(operande1, operande2);
+                console.log(result);
+                break;
+            default:
+            console.error("Invalid operator");
+            return;
+        }
+    }
+    operateurAdd.addEventListener('click', () => calculate("+"));
+    operateurSub.addEventListener('click', () => calculate("-"));
+    operateurMultiply.addEventListener('click', () => calculate("*"));
+    operateurDivide.addEventListener('click', () => calculate("/"));
+
+
+        // perform the operation
+   
 })();

@@ -10,25 +10,29 @@
 // You will have time to focus on it later.
 
 (() => {
+const redButton = document.getElementById("red");
+const greenButton = document.getElementById("green");
+const blueButton = document.getElementById("blue");
+const yellowButton = document.getElementById("yellow");
+let body = document.querySelector("body"); 
+console.log(body);
 
-    document.getElementById("red").addEventListener("click", () => {
-        let body = document.querySelector('body');
-        body.style.backgroundColor = 'red';
-    });
+redButton.addEventListener("click", () => {
+    body.style.background = 'red';
+})
 
-    document.getElementById("green").addEventListener("click", () => {
-        let body = document.querySelector('body');
-        body.style.backgroundColor = 'green';
-    });
+greenButton.addEventListener('click', () => {
+    body.style.background = 'green';
+})
 
-    document.getElementById("yellow").addEventListener("click", () => {
-        let body = document.querySelector('body');
-        body.style.backgroundColor = 'yellow';
-    });
+blueButton.addEventListener('click', () => {
+    body.style.background = 'blue';
+})
 
-    document.getElementById("blue").addEventListener("click", () => {
-        let body = document.querySelector('body');
-        body.style.backgroundColor = 'blue';
-    });
+yellowButton.addEventListener('click', () => {
+    body.style.background = 'yellow';
+})
+
+
     // your code here
 })();

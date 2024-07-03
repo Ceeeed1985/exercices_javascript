@@ -10,18 +10,8 @@
 // You will have time to focus on it later.
 
 (() => {
-    let dateActuelle = new Date();
-    let heures = dateActuelle.getHours();
-    let minutes = dateActuelle.getMinutes();
-    let heureActuelle = `${heures}:${minutes}`;
 
-    console.log("Heure actuelle :", heureActuelle);
 
-    let changeMoi = document.getElementById("target");
 
-if(heureActuelle >= "17:30"){
-    changeMoi.textContent="Bonsoir";
-} else {
-    changeMoi.textContent="Bonjour";
-}
+    
 })();

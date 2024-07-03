@@ -11,17 +11,36 @@
 
 (() => {
 
+let red;
+let green;
+let blue;
+let color;
+let body = document.querySelector("body");
+const run = document.getElementById("run");
 
+function genererRed(){
+    red = Math.floor(Math.random() * 255);
+}
 
-document.getElementById("run").addEventListener("click", () => {
- 
-    let couleurs = ['red', 'blue', 'green', 'yellow'];
-    let indexAleatoire = Math.floor(Math.random() * couleurs.length);
-    let couleursAleatoires = couleurs[indexAleatoire];
+function genererGreen(){
+    green = Math.floor(Math.random() * 255);
+}
 
-    document.body.style.backgroundColor = couleursAleatoires;
+function genererBlue(){
+    blue = Math.floor(Math.random() * 255);
+}
+
+function genererCouleur(){
+    genererRed();
+    genererGreen();
+    genererBlue();
+    color = "rgb("+red+","+green+","+blue+")";
+}
+
+run.addEventListener("click", () => {
+    genererCouleur();
+    body.style.background = color;
 })
-
 
     // your code here
 })();

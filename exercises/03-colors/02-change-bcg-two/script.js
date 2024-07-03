@@ -11,15 +11,16 @@
 
 (() => {
 
+let fond = document.querySelector("body");
+let run = document.getElementById("run");
+run.addEventListener("click", () => {
+    let choixCouleur = document.getElementById('color').value;
+    console.log(choixCouleur);
+    fond.style.background = choixCouleur;
+})
 
 
-    document.getElementById("run").addEventListener("click", () => {
- 
-        let couleur = document.getElementById('color').value;
 
-        document.body.style.backgroundColor = couleur;
-
-        })
 
     
     // your code here
