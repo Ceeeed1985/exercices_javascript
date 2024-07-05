@@ -90,7 +90,18 @@
 
     document.getElementById("run").addEventListener("click", () =>{
 
+        let index = 0;
+        let trouve = false;
 
+        while (!trouve && index < people.length) {
+            if (people[lastname[index]] === "Dupont") {
+                trouve = true;
+                console.log("valeur trouvée à l'index", index);
+            } else {
+                index++;
+            }
+        }
+      
         people.forEach(function(people){
             if ((people.firstname != "Jean") && (people.lastname != "Dupont")){
                 console.log("");

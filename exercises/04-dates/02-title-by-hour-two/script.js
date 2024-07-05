@@ -11,10 +11,18 @@
 
 (() => {
 
-const d = new Date();
-let hour = d.getHours();
-let minute = hour.ge
-console.log(hour);
+const date = new Date();
+let heure = date.getHours();
+let minute = date.getMinutes();
+let message;
 
+if ((heure < 17)||((heure==17)&&(minute<30))){
+    message = "Bonjour";
+} else {
+    message = "Bonsoir";
+}
+
+let target = document.getElementById("target");
+target.innerText = message;
 
 })();

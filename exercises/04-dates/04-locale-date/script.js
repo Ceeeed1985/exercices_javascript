@@ -11,51 +11,55 @@
 
 (() => {
 
-    let dateToday = new Date();
-    let year = dateToday.getFullYear();
-    let month = dateToday.getMonth();
-    let day = dateToday.getDay();
-    let date = dateToday.getDate();
+let dateToday = new Date();
+let year = dateToday.getFullYear();
+let month = dateToday.getMonth();
+let day = dateToday.getDay();
+let date = dateToday.getDate();
+let hour = dateToday.getHours();
+let minute = dateToday.getMinutes();
+let message;
 
-const tableauJours= [
-    "Lundi",
-    "Mardi",
-    "Mercredi",
-    "Jeudi",
-    "Vendredi",
-    "Samedi",
-    "Dimanche"
-];
+const tableauJours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+const tableauMois = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"]
 
-for (i=0; i<tableauJours.length;i++){
-    switch (i) {
-        case i:
-            day = tableauJours[i];
-            break;
-    }
+
+day = tableauJours[day];
+month = tableauMois[month];
+
+
+if (hour<12){
+    message = "Bonne journée !";
+} else if (hour<15){
+    message = "Bon après-midi !";
+} else if (hour<17){
+    message = "Bonne fin d'après-midi !";
+} else if (hour<22){
+    message = "Bonne soirée !"
+} else {
+    message = "Bonne nuit !";
 }
-
-console.log(day);
-
-
-console.log(tableauJours);
 
 
 
 let dateComplete ="Nous sommes le "
-    + date
-    + " "
     + day
+    + " "
+    + date
     + " "
     + month
     + " "
     + year
+    + ", et il est "
+    + hour
+    + "h"
+    + minute
+    + " ! \n\n"
+    + message
 
-console.log(year);
-console.log(dateToday);
+
 
 let changeMoi = document.getElementById("target");
-console.log(changeMoi);
 changeMoi.innerText = dateComplete;
 
 })();
