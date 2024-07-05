@@ -25,11 +25,9 @@
         "cerise",
     ];
 
-    document.getElementById("run").addEventListener("click", () => {
-        
-        alert ("ce que vous demandez est : "+ (fruits[3]));
-
-
+let run = document.getElementById("run");
+run.addEventListener("click", () => {
+    alert(fruits[3]);
 })
 
 })();

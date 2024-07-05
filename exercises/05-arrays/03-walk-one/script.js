@@ -25,11 +25,13 @@
         "cerise",
     ];
 
-document.getElementById("run").addEventListener("click", () => {
-    for (const fruit in fruits) {
-        console.log(fruits[fruit]);
-    }
 
+let run = document.getElementById("run");
+run.addEventListener("click", () => {
+    for (i=0;i<fruits.length;i++){
+        console.log(fruits[i]);
+    }
 })
+
 
 })();

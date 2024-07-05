@@ -23,14 +23,12 @@
         "cerise",
     ];
 
-    document.getElementById("run").addEventListener("click", () => {
-
-        fruits.pop();
-        fruits.shift();
-        fruits.unshift('banane');
-        fruits.push('kiwi');
-        console.log(fruits);
-        alert("voici le tableau contennant les fruits : " + fruits);
+let run = document.getElementById("run").addEventListener("click", () => {
+    fruits.shift();
+    fruits.pop();
+    fruits.push("kiwi");
+    fruits.unshift("banane");
+    console.log(fruits);
 })
 
 })();

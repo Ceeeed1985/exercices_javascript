@@ -88,30 +88,15 @@
         },
     ];
 
-    document.getElementById("run").addEventListener("click", () =>{
-
-        let index = 0;
-        let trouve = false;
-
-        while (!trouve && index < people.length) {
-            if (people[lastname[index]] === "Dupont") {
-                trouve = true;
-                console.log("valeur trouvée à l'index", index);
-            } else {
-                index++;
-            }
+let run = document.getElementById("run");
+run.addEventListener("click", () => {
+    people.forEach(person => {
+        if((person.firstname == "Jean") && (person.lastname == "Dupont")) {
+        console.log(person.email);
         }
-      
-        people.forEach(function(people){
-            if ((people.firstname != "Jean") && (people.lastname != "Dupont")){
-                console.log("");
-            } else {
-                console.log(people.email);
-            }
-
-        })
-
     })
+})
+
 
 
 })();

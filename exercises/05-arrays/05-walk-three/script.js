@@ -41,13 +41,13 @@
         },
     ];
 
-    document.getElementById("run").addEventListener("click", () =>{
+let run = document.getElementById("run");
+run.addEventListener("click", () => {
+    people.forEach(person => {
+        console.log(person.lastname)
+    })
+})
 
-        people.forEach(function(person){
-            console.log(person.lastname);
-        })
-
-    });
 
 
 })();

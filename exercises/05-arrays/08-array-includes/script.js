@@ -25,5 +25,17 @@
         "cerise",
     ];
 
-    // your code here
+
+let run = document.getElementById("run");
+run.addEventListener("click", () => {
+    if(fruits.includes("pomme")){
+        console.log("Il y a une pomme dans le tableau");
+    } else {
+        console.log("Il n'y a pas de pomme dans le tableau");
+    }
+})
+
+
+
+
 })();

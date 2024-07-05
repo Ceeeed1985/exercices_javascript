@@ -25,11 +25,11 @@
         "cerise",
     ];
 
-    document.getElementById("run").addEventListener("click", () => {
-        fruits.forEach(function (fruit){
-            console.log(fruit);
+let run = document.getElementById("run");
+run.addEventListener("click", () => {
+    fruits.forEach(fruit => {
+        console.log(fruit);
     })
-    
 })
 
 })();
