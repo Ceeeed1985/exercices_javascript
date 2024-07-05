@@ -10,23 +10,21 @@
 // You will have time to focus on it later.
 
 (() => {
+let day;
+let month;
+let year;
+let date = new Date();
+let age;
 
-    let dateActuelle = new Date();
-
-    document.getElementById("run").addEventListener("click", () => {
-        let bday = parseInt(document.getElementById("dob-day").value);
-        let bmonth = parseInt(document.getElementById("dob-month").value);
-        let byear = parseInt(document.getElementById("dob-year").value);
-        let bdate = new Date(byear, bmonth, bday);
-        
-        let differenceEnMillisec = dateActuelle - bdate;
-
-        let ageEnMillisecondes = new Date(differenceEnMillisec);
-        let age = Math.abs(ageEnMillisecondes.getUTCFullYear() - 1970);
-
-        alert("Votre age est de "+ age + " ans !");
-    }); 
-
-    
+const run = document.getElementById("run");
+run.addEventListener('click', () => {
+    day = document.querySelector("#dob-day").value;
+    month = document.querySelector("#dob-month").value;
+    year = document.querySelector("#dob-year").value;
+    const birthDate = new Date(year,month,day);
+    age = (date - birthDate)/365/24/60/60/1000;
+    age = parseInt(age);
+    alert("Tu as donc "+age+" ans !");
+})
 
 })();

@@ -11,7 +11,10 @@
 
 (() => {
 
+const d = new Date();
+let hour = d.getHours();
+let minute = hour.ge
+console.log(hour);
 
 
-    
 })();
